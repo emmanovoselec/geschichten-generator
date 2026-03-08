@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geschichten-Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+
+  <div class="container">
+    <header>
+      <h1>Geschichten-Generator</h1>
+      <p class="subtitle">Erstelle deine eigene magische Geschichte!</p>
+    </header>
+
+    <div class="card" id="form-card">
+      <div class="input-group">
+        <label for="name">Wie heisst deine Hauptfigur?</label>
+        <input type="text" id="name" placeholder="z.B. Luna, Max, Mia..." maxlength="30" autofocus>
+      </div>
+
+      <div class="input-group">
+        <label>Wähle ein Thema:</label>
+        <div class="theme-grid">
+          <button class="theme-btn selected" data-theme="abenteuer">
+            <span class="theme-icon">🗺️</span>
+            <span>Abenteuer</span>
+          </button>
+          <button class="theme-btn" data-theme="fantasy">
+            <span class="theme-icon">🧙</span>
+            <span>Fantasy</span>
+          </button>
+          <button class="theme-btn" data-theme="tiere">
+            <span class="theme-icon">🦊</span>
+            <span>Tiere</span>
+          </button>
+          <button class="theme-btn" data-theme="freundschaft">
+            <span class="theme-icon">💛</span>
+            <span>Freundschaft</span>
+          </button>
+          <button class="theme-btn" data-theme="weltraum">
+            <span class="theme-icon">🚀</span>
+            <span>Weltraum</span>
+          </button>
+          <button class="theme-btn" data-theme="meer">
+            <span class="theme-icon">🧜‍♀️</span>
+            <span>Meer</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="generate-btn" id="generate-btn">
+        <span class="btn-icon">✨</span> Geschichte erzählen!
+      </button>
+    </div>
+
+    <div class="card story-card hidden" id="story-card">
+      <div class="story-header">
+        <h2 id="story-title"></h2>
+      </div>
+      <div class="story-body" id="story-body"></div>
+      <div class="story-end" id="story-end"></div>
+      <div class="story-actions">
+        <button class="action-btn" id="new-story-btn">
+          🔄 Neue Geschichte
+        </button>
+        <button class="action-btn secondary" id="back-btn">
+          ← Zurück
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #ff6b9d;
+  --purple: #c44dff;
+  --blue: #4d79ff;
+  --yellow: #ffd23f;
+  --green: #44d7b6;
+  --bg: #1a1a2e;
+  --card: #16213e;
+  --text: #f0f0f0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: twinkle var(--dur) ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  background: linear-gradient(135deg, var(--pink), var(--purple), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #a0a0c0;
+  margin-top: 6px;
+  font-size: 1.1rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #c0c0e0;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]::placeholder {
+  color: #606080;
+}
+
+input[type="text"]:focus {
+  border-color: var(--purple);
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.theme-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 8px;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: #c0c0e0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.theme-btn.selected {
+  border-color: var(--purple);
+  background: rgba(196, 77, 255, 0.15);
+  color: white;
+}
+
+.theme-icon {
+  font-size: 1.6rem;
+}
+
+.generate-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  margin-top: 4px;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(196, 77, 255, 0.4);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 1.3rem;
+}
+
+/* Story card */
+.story-card {
+  animation: fadeUp 0.5s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.story-header h2 {
+  font-size: 1.5rem;
+  color: var(--yellow);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.story-body {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #d0d0e8;
+  white-space: pre-wrap;
+}
+
+.story-end {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  color: var(--pink);
+  font-weight: 600;
+}
+
+.story-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.action-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #c0c0e0;
+}
+
+.action-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  .theme-grid { grid-template-columns: repeat(2, 1fr); }
+  .card { padding: 20px 16px; }
+}
